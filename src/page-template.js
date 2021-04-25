@@ -10,10 +10,10 @@ function thirdValue(employee){
     // conditional function to generate the third value to display in employee card
     if(employee.getRole() === 'Manager'){
         // if manager return office number
-        return employee.getOfficeNumber();
+        return `Office Number: ${employee.getOfficeNumber()}`;
     } else if(employee.getRole() === 'Engineer'){
         // if engineer return github
-        return employee.getGithub();
+        return `Github: <a target="_blank" href="https://github.com/${employee.getGithub()}">${employee.getGithub()}</a>`;
     } else {
         // if intern return school
         return employee.getSchool();
@@ -32,8 +32,8 @@ function employeeCard(teamData){
              </div>
             <div class="card-body">
                   <ul class="list-group list-group-flush">
-                     <li class="list-group-item">${employee.id}</li>
-                     <li class="list-group-item">${employee.email}</li>
+                     <li class="list-group-item">ID: ${employee.id}</li>
+                     <li class="list-group-item"><a target="_blank" href="mailto:${employee.email}">Email: ${employee.email}</a></li>
                        <li class="list-group-item">${thirdValue(employee)}</li>
                  </ul>
            </div>
